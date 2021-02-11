@@ -13,6 +13,24 @@
 #include "get_next_line.h"
 #include <fcntl.h>
 
+char	*ft_calloc(size_t count, size_t size)
+{
+	char	*ptr;
+	size_t	len;
+	size_t	i;
+
+	i = 0;
+	len = count * size;
+	if (!(ptr = malloc((count * size) * sizeof(char))))
+		return (NULL);
+	while (i < len)
+	{
+		ptr[i] = '\0';
+		i++;
+	}
+	return (ptr);
+}
+
 int		ft_eol(char **s, char **line, int fd)
 {
 	size_t i;

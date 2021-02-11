@@ -12,6 +12,16 @@
 
 #include "get_next_line.h"
 
+size_t	ft_strlen(const char *s)
+{
+	size_t i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*s1;
@@ -51,24 +61,6 @@ char	*ft_strdup(const char *s1)
 	}
 	s2[i] = '\0';
 	return (s2);
-}
-
-char	*ft_calloc(size_t count, size_t size)
-{
-	char	*ptr;
-	size_t	len;
-	size_t	i;
-
-	i = 0;
-	len = count * size;
-	if (!(ptr = malloc((count * size) * sizeof(char))))
-		return (NULL);
-	while (i < len)
-	{
-		ptr[i] = '\0';
-		i++;
-	}
-	return (ptr);
 }
 
 char	*ft_strchr(const char *s, int c)
